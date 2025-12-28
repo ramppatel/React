@@ -4,9 +4,74 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>reduxtoolkit</title>
+    <title>Redux Toolkit Todo</title>
+
+    <style>
+      /* Base background */
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: radial-gradient(circle at top, #a593fd, #e0e3fe);
+        overflow: hidden;
+      }
+
+      /* Particle container */
+      .particles {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      /* Individual particle */
+      .particle {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: rgba(246, 59, 59, 0.5);
+        border-radius: 50%;
+        filter: blur(0.5px);
+        animation: float linear infinite;
+      }
+
+      /* Floating animation */
+      @keyframes float {
+        0% {
+          transform: translateY(110vh) translateX(0);
+          opacity: 0;
+        }
+        20% {
+          opacity: 0.8;
+        }
+        100% {
+          transform: translateY(-10vh) translateX(60px);
+          opacity: 0;
+        }
+      }
+
+      /* Root stays above particles */
+      #root {
+        position: relative;
+        z-index: 1;
+      }
+    </style>
   </head>
+
   <body>
+    <!-- Animated background particles -->
+    <div class="particles">
+      <div class="particle" style="left:10%; animation-duration:10s;"></div>
+      <div class="particle" style="left:20%; animation-duration:22s;"></div>
+      <div class="particle" style="left:30%; animation-duration:20s;"></div>
+      <div class="particle" style="left:40%; animation-duration:26s;"></div>
+      <div class="particle" style="left:50%; animation-duration:24s;"></div>
+      <div class="particle" style="left:60%; animation-duration:19s;"></div>
+      <div class="particle" style="left:70%; animation-duration:23s;"></div>
+      <div class="particle" style="left:80%; animation-duration:21s;"></div>
+      <div class="particle" style="left:90%; animation-duration:25s;"></div>
+    </div>
+
+    <!-- React app -->
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
